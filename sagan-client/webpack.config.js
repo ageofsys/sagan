@@ -104,6 +104,19 @@ module.exports = {
                 options: {
                     name: '[path][name].[ext]',
                 },
+            },
+            {
+                test: /\.(woff|woff2|ttf|eot)$/,
+                use: 'file-loader?name=fonts/[name].[ext]!static'
+            },
+            {
+                test: /\.svg$/,
+                use: {
+                    loader: 'svg-url-loader',
+                    options: {
+                        encoding: 'base64'
+                    }
+                }
             }
         ]
     },
